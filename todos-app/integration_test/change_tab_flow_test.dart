@@ -14,8 +14,21 @@ import 'app/main.mocks.dart';
 import 'test_helpers.dart';
 
 void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  // IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group('Change tab flow test', () {
+    testWidgets(
+      'Change tab with empty data',
+      (WidgetTester widgetTester) async {
+        mainApp.main();
+        await widgetTester.pumpAndSettle();
+
+        await changeTab(widgetTester, BottomNavigationState.complete);
+        //In tab "Complete", the todos view is empty
+        final todoItems = find.byType(TodoItem);
+        expect(todoItems, findsNothing);
+        expect(find.text('Empty'), findsOneWidget);
+      },
+    );
     testWidgets(
       'Change tab in normal case',
       (WidgetTester widgetTester) async {
@@ -60,24 +73,10 @@ void main() {
     );
 
     testWidgets(
-      'Change tab with empty data',
-      (WidgetTester widgetTester) async {
-        mainApp.main();
-        await widgetTester.pumpAndSettle();
-
-        final todoList = find.byType(TodosView);
-        Finder todoItems = find.byType(TodoItem);
-        expect(todoList, findsOneWidget);
-
-        await changeTab(widgetTester, BottomNavigationState.complete);
-        //In tab "Complete", the todos view is empty
-        expect(todoItems, findsNothing);
-      },
-    );
-
-    testWidgets(
       'Change tab with error data',
       (WidgetTester widgetTester) async {
+        IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
         final todosRepository = MockTodosRepository();
         //Mock data
         when(todosRepository
