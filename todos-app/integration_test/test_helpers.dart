@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:todo_package/todo_package.dart';
+import 'package:todos_app/models/bottom_navigation_state.dart';
 import 'package:todos_app/screens/home/widgets/todo_item.dart';
 import 'package:todos_app/utils/keys.dart';
-
-List<Todo> get getIncompleteTodos => [
-      Todo.create(id: 1, task: 'task_1_incomplete', complete: false),
-      Todo.create(id: 2, task: 'task_2_incomplete', complete: false),
-    ];
-List<Todo> get getCompleteTodos => [
-      Todo.create(id: 3, task: 'task_3_complete', complete: true),
-      Todo.create(id: 4, task: 'task_4_complete', complete: true),
-      Todo.create(id: 5, task: 'task_5_complete', complete: true),
-    ];
-List<Todo> get getAllTodos => [...getCompleteTodos, ...getIncompleteTodos];
 
 addTodo(WidgetTester widgetTester, String task) async {
   final addTodoButton = find.byKey(Key(AppKeys.addTodoButton));
@@ -35,14 +24,37 @@ addTodo(WidgetTester widgetTester, String task) async {
   expect(newTodoResult, findsOneWidget);
 }
 
-completeTodo(WidgetTester widgetTester, String taskName) async {
+completeTodo(WidgetTester widgetTester, String taskName,
+    {bool uncomplete = false}) async {
   final todo =
       find.ancestor(of: find.text(taskName), matching: find.byType(TodoItem));
 
   final todoCheckBox = find.descendant(
-      of: todo, matching: find.byIcon(Icons.check_box_outline_blank));
+      of: todo,
+      matching: find.byIcon(
+          uncomplete ? Icons.check_box : Icons.check_box_outline_blank));
   await widgetTester.tap(todoCheckBox);
   await widgetTester.pumpAndSettle();
 
   expect(todoCheckBox, findsNothing);
+}
+
+changeTab(WidgetTester widgetTester,
+    BottomNavigationState bottomNavigationState) async {
+  switch (bottomNavigationState) {
+    case BottomNavigationState.all:
+      final bottomBarItem = find.text('All');
+      await widgetTester.tap(bottomBarItem);
+      break;
+    case BottomNavigationState.complete:
+      final bottomBarItem = find.text('Complete');
+      await widgetTester.tap(bottomBarItem);
+      break;
+    case BottomNavigationState.incomplete:
+      final bottomBarItem = find.text('Incomplete');
+      await widgetTester.tap(bottomBarItem);
+      break;
+    default:
+  }
+  await widgetTester.pumpAndSettle();
 }

@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get_it/get_it.dart';
-import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:todo_package/todo_package.dart';
-import 'package:todo_service/todo_service.dart';
-import 'package:todos_app/di/injector.dart';
 import 'package:todos_app/screens/home/widgets/todo_item.dart';
 import 'package:todos_app/utils/keys.dart';
 
 import 'app/main.dart' as app;
 import 'app/main.mocks.dart';
 
-import '../lib/main.dart' as mainApp;
+import 'package:todos_app/main.dart' as mainApp;
 import 'test_helpers.dart';
 
 void main() {
-  // IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group('Add todo flow test', () {
     testWidgets(
       'Add todo - Success',
