@@ -18,7 +18,7 @@ class TodosRepository implements AbstractTodosRepository {
   }
 
   @override
-  getTodos(GetTodoListTodoAction loadTodosAction) {
+  getTodos(GetTodoListMiddlewareTodoAction loadTodosAction) {
     return localRepo.getTodos(loadTodosAction);
   }
 }

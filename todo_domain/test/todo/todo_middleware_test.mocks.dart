@@ -45,7 +45,7 @@ class MockTodosRepository extends _i1.Mock implements _i4.TodosRepository {
   dynamic updateTodo(_i5.Todo? todo) =>
       super.noSuchMethod(Invocation.method(#updateTodo, [todo]));
   @override
-  dynamic getTodos(_i6.GetTodoListTodoAction? loadTodosAction) =>
+  dynamic getTodos(_i6.GetTodoListMiddlewareTodoAction? loadTodosAction) =>
       super.noSuchMethod(Invocation.method(#getTodos, [loadTodosAction]));
 }
 

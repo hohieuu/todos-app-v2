@@ -30,7 +30,7 @@ class TodoItem extends StatelessWidget {
             GestureDetector(
                 onTap: () {
                   StoreProvider.of<AppState>(context)
-                      .dispatch(CompleteItemTodoAction.create(
+                      .dispatch(CompleteItemMiddlewareTodoAction.create(
                     todo,
                     todo.complete,
                   ));

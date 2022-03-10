@@ -17,7 +17,7 @@ class UIMiddleware extends EpicClass<AppState> {
         final TodoFilter todoFilter = TodoFilter((p1) => p1
           ..todoType = TodoType.values[
               BottomNavigationState.toIndex(action.bottomNavigationState)]);
-        yield GetTodoListTodoAction.create(todoFilter);
+        yield GetTodoListMiddlewareTodoAction.create(todoFilter);
       }
     }
   }

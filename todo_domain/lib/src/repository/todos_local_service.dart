@@ -17,8 +17,9 @@ class TodosLocalService implements AbstractTodosRepository {
   }
 
   @override
-  getTodos(GetTodoListTodoAction getTodoListTodoAction) async {
-    switch (getTodoListTodoAction.todoFilter.todoType) {
+  getTodos(
+      GetTodoListMiddlewareTodoAction GetTodoListMiddlewareTodoAction) async {
+    switch (GetTodoListMiddlewareTodoAction.todoFilter.todoType) {
       case TodoType.all:
         final response = await todosProvider.getAllTodos();
         return response.map((e) => Todo.fromMap(e)).toList();

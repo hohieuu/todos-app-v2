@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = StoreProvider.of<AppState>(context)
-      ..dispatch(GetTodoListTodoAction());
+      ..dispatch(GetTodoListMiddlewareTodoAction());
     return Scaffold(
       appBar: AppBar(title: const Text('Todos')),
       body: const Padding(

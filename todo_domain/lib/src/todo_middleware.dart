@@ -17,20 +17,20 @@ class TodoMiddleware extends EpicClass<AbstractTodoFeature> {
   Stream<dynamic> _addTodoEpic(
       Stream<dynamic> actions, EpicStore<AbstractTodoFeature> store) async* {
     await for (dynamic action in actions) {
-      if (action is AddItemTodoAction) {
-        yield SetStatusTodoAction.create(
+      if (action is AddItemMiddlewareTodoAction) {
+        yield SetStatusReducerTodoAction.create(
             statusKey: action.statusKey, status: Status.loading());
         try {
           int? id = await todosRepository.addTodo(action.todo);
-          yield SetStatusTodoAction.create(
+          yield SetStatusReducerTodoAction.create(
               statusKey: action.statusKey,
               status: id != null ? Status.success() : Status.error());
           if (id != null) {
-            yield GetTodoListTodoAction.create(
+            yield GetTodoListMiddlewareTodoAction.create(
                 store.state.todoState.todoFilter);
           }
         } catch (error) {
-          yield SetStatusTodoAction.create(
+          yield SetStatusReducerTodoAction.create(
               statusKey: action.statusKey, status: Status.error());
         }
       }
@@ -40,14 +40,15 @@ class TodoMiddleware extends EpicClass<AbstractTodoFeature> {
   Stream<dynamic> _completeTodoEpic(
       Stream<dynamic> actions, EpicStore<AbstractTodoFeature> store) async* {
     await for (dynamic action in actions) {
-      if (action is CompleteItemTodoAction) {
+      if (action is CompleteItemMiddlewareTodoAction) {
         try {
           await todosRepository.updateTodo(action.todo.rebuild(
               (builder) => builder..complete = !(action.todo.complete)));
         } catch (_) {
           // Do not handle with error status, just reload the list
         } finally {
-          yield GetTodoListTodoAction.create(store.state.todoState.todoFilter);
+          yield GetTodoListMiddlewareTodoAction.create(
+              store.state.todoState.todoFilter);
         }
       }
     }
@@ -58,19 +59,19 @@ class TodoMiddleware extends EpicClass<AbstractTodoFeature> {
     EpicStore<AbstractTodoFeature> store,
   ) async* {
     await for (dynamic action in actions) {
-      if (action is GetTodoListTodoAction) {
-        yield SetFilterTodoAction((values) => values
+      if (action is GetTodoListMiddlewareTodoAction) {
+        yield SetFilterReducerTodoAction((values) => values
           ..statusKey = action.statusKey
           ..todoFilter = action.todoFilter.toBuilder());
 
-        yield SetStatusTodoAction.create(
+        yield SetStatusReducerTodoAction.create(
             statusKey: action.statusKey, status: Status.loading());
         try {
           final List<Todo> newTodos = await todosRepository.getTodos(action);
-          yield SetTodoListTodoAction.create(
+          yield SetTodoListReducerTodoAction.create(
               statusKey: action.statusKey, todos: newTodos);
         } catch (_) {
-          yield SetStatusTodoAction.create(
+          yield SetStatusReducerTodoAction.create(
               statusKey: action.statusKey, status: Status.error());
         }
       }

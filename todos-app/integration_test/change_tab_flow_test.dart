@@ -80,13 +80,14 @@ void main() {
         final todosRepository = MockTodosRepository();
         //Mock data
         when(todosRepository
-                .getTodos(GetTodoListTodoAction.create(TodoFilter())))
+                .getTodos(GetTodoListMiddlewareTodoAction.create(TodoFilter())))
             .thenAnswer((_) async {
           return [];
         });
 
-        when(todosRepository.getTodos(GetTodoListTodoAction.create(TodoFilter(
-                (updates) => updates..todoType = TodoType.complete))))
+        when(todosRepository.getTodos(GetTodoListMiddlewareTodoAction.create(
+                TodoFilter(
+                    (updates) => updates..todoType = TodoType.complete))))
             .thenThrow('error');
 
         app.main([], todosRepository: todosRepository);

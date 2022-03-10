@@ -11,11 +11,11 @@ class AddTodoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController _taskInputController = TextEditingController();
     return StoreConnector<AppState, Status>(
-      onInit: ((store) => store.dispatch(SetStatusTodoAction.create(
-          statusKey: AddItemTodoAction.createStatusKey(),
+      onInit: ((store) => store.dispatch(SetStatusReducerTodoAction.create(
+          statusKey: AddItemMiddlewareTodoAction.createStatusKey(),
           status: Status.idle()))),
-      converter: (store) => (store
-              .state.todoState.statuses[AddItemTodoAction.createStatusKey()] ??
+      converter: (store) => (store.state.todoState
+              .statuses[AddItemMiddlewareTodoAction.createStatusKey()] ??
           Status.idle()),
       builder: (context, addTodoStatus) {
         return Scaffold(
@@ -42,7 +42,7 @@ class AddTodoPage extends StatelessWidget {
                   : () {
                       if (_taskInputController.text.isNotEmpty) {
                         StoreProvider.of<AppState>(context).dispatch(
-                            AddItemTodoAction.create(
+                            AddItemMiddlewareTodoAction.create(
                                 Todo.create(task: _taskInputController.text)));
                       }
                     },
@@ -59,8 +59,8 @@ class AddTodoPage extends StatelessWidget {
             ScaffoldMessenger.of(context)
                 .showSnackBar(const SnackBar(content: Text('Added')));
             StoreProvider.of<AppState>(context).dispatch(
-                SetStatusTodoAction.create(
-                    statusKey: AddItemTodoAction.createStatusKey(),
+                SetStatusReducerTodoAction.create(
+                    statusKey: AddItemMiddlewareTodoAction.createStatusKey(),
                     status: Status.idle()));
             Navigator.pop(context, true);
             break;

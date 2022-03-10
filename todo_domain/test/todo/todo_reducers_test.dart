@@ -11,7 +11,7 @@ void main() {
     test('Update todos', () {
       final initialState = TodoState();
 
-      final action = SetTodoListTodoAction((p0) => p0
+      final action = SetTodoListReducerTodoAction((p0) => p0
         ..statusKey = statusKey
         ..todos.addAll(getAllTodos));
 
@@ -26,7 +26,7 @@ void main() {
     test('Set todos status', () {
       final initialState = TodoState();
 
-      final action = SetStatusTodoAction((p0) => p0
+      final action = SetStatusReducerTodoAction((p0) => p0
         ..statusKey = statusKey
         ..status = Status.loading().toBuilder());
 
@@ -39,7 +39,7 @@ void main() {
     test('Set add todo status', () {
       final initialState = TodoState();
 
-      final action = SetStatusTodoAction((p0) => p0
+      final action = SetStatusReducerTodoAction((p0) => p0
         ..statusKey = statusKey
         ..status = Status.error().toBuilder());
 

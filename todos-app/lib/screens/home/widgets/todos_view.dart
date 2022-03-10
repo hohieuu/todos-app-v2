@@ -12,10 +12,10 @@ class TodosView extends StatelessWidget {
     return StoreConnector<AppState, TodoState>(
         converter: (store) => store.state.todoState,
         builder: (BuildContext context, TodoState state) {
-          final LoadingStatus loadingStatus =
-              (state.statuses[GetTodoListTodoAction.createStatusKey()] ??
-                      Status.idle())
-                  .loading;
+          final LoadingStatus loadingStatus = (state.statuses[
+                      GetTodoListMiddlewareTodoAction.createStatusKey()] ??
+                  Status.idle())
+              .loading;
           switch (loadingStatus) {
             case LoadingStatus.loading:
               return const Center(

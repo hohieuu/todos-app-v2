@@ -9,103 +9,106 @@ part 'todo_actions.g.dart';
 
 abstract class AbstractTodoAction {}
 
-abstract class GetTodoListTodoAction
+abstract class GetTodoListMiddlewareTodoAction
     implements
-        Built<GetTodoListTodoAction, GetTodoListTodoActionBuilder>,
+        Built<GetTodoListMiddlewareTodoAction,
+            GetTodoListMiddlewareTodoActionBuilder>,
         AbstractTodoAction {
   String get statusKey;
   TodoFilter get todoFilter;
 
   static String createStatusKey() {
-    return 'GetTodoListTodoAction';
+    return 'GetTodoListMiddlewareTodoAction';
   }
 
-  factory GetTodoListTodoAction.create(TodoFilter todoFilter) {
-    return GetTodoListTodoAction(
+  factory GetTodoListMiddlewareTodoAction.create(TodoFilter todoFilter) {
+    return GetTodoListMiddlewareTodoAction(
         (p0) => p0..todoFilter = todoFilter.toBuilder());
   }
 
-  GetTodoListTodoAction._();
+  GetTodoListMiddlewareTodoAction._();
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _setDefaults(GetTodoListTodoActionBuilder b) =>
+  static void _setDefaults(GetTodoListMiddlewareTodoActionBuilder b) =>
       b..statusKey = createStatusKey();
 
-  factory GetTodoListTodoAction(
-          [void Function(GetTodoListTodoActionBuilder) updates]) =
-      _$GetTodoListTodoAction;
+  factory GetTodoListMiddlewareTodoAction(
+          [void Function(GetTodoListMiddlewareTodoActionBuilder) updates]) =
+      _$GetTodoListMiddlewareTodoAction;
 }
 
-abstract class SetFilterTodoAction
+abstract class SetFilterReducerTodoAction
     implements
-        Built<SetFilterTodoAction, SetFilterTodoActionBuilder>,
+        Built<SetFilterReducerTodoAction, SetFilterReducerTodoActionBuilder>,
         AbstractTodoAction {
   String get statusKey;
   TodoFilter get todoFilter;
 
-  SetFilterTodoAction._();
-  factory SetFilterTodoAction(
-          [void Function(SetFilterTodoActionBuilder) updates]) =
-      _$SetFilterTodoAction;
+  SetFilterReducerTodoAction._();
+  factory SetFilterReducerTodoAction(
+          [void Function(SetFilterReducerTodoActionBuilder) updates]) =
+      _$SetFilterReducerTodoAction;
 }
 
-abstract class SetStatusTodoAction
+abstract class SetStatusReducerTodoAction
     implements
-        Built<SetStatusTodoAction, SetStatusTodoActionBuilder>,
+        Built<SetStatusReducerTodoAction, SetStatusReducerTodoActionBuilder>,
         AbstractTodoAction {
   Status get status;
   String get statusKey;
 
-  factory SetStatusTodoAction.create(
+  factory SetStatusReducerTodoAction.create(
       {required String statusKey, required Status status}) {
-    return SetStatusTodoAction(
+    return SetStatusReducerTodoAction(
       (updates) => updates
         ..status = status.toBuilder()
         ..statusKey = statusKey,
     );
   }
 
-  SetStatusTodoAction._();
-  factory SetStatusTodoAction(
-          [void Function(SetStatusTodoActionBuilder) updates]) =
-      _$SetStatusTodoAction;
+  SetStatusReducerTodoAction._();
+  factory SetStatusReducerTodoAction(
+          [void Function(SetStatusReducerTodoActionBuilder) updates]) =
+      _$SetStatusReducerTodoAction;
 }
 
-abstract class CompleteItemTodoAction
+abstract class CompleteItemMiddlewareTodoAction
     implements
-        Built<CompleteItemTodoAction, CompleteItemTodoActionBuilder>,
+        Built<CompleteItemMiddlewareTodoAction,
+            CompleteItemMiddlewareTodoActionBuilder>,
         AbstractTodoAction {
   Todo get todo;
   String get statusKey;
 
-  CompleteItemTodoAction._();
+  CompleteItemMiddlewareTodoAction._();
 
-  factory CompleteItemTodoAction(
-          [void Function(CompleteItemTodoActionBuilder) updates]) =
-      _$CompleteItemTodoAction;
+  factory CompleteItemMiddlewareTodoAction(
+          [void Function(CompleteItemMiddlewareTodoActionBuilder) updates]) =
+      _$CompleteItemMiddlewareTodoAction;
 
   static String createStatusKey() {
-    return 'CompleteItemTodoAction';
+    return 'CompleteItemMiddlewareTodoAction';
   }
 
-  factory CompleteItemTodoAction.create(Todo todo, bool complete) {
-    return CompleteItemTodoAction((builder) => builder
+  factory CompleteItemMiddlewareTodoAction.create(Todo todo, bool complete) {
+    return CompleteItemMiddlewareTodoAction((builder) => builder
       ..todo.replace(todo)
       ..statusKey = createStatusKey());
   }
 }
 
-abstract class SetTodoListTodoAction
+abstract class SetTodoListReducerTodoAction
     implements
-        Built<SetTodoListTodoAction, SetTodoListTodoActionBuilder>,
+        Built<SetTodoListReducerTodoAction,
+            SetTodoListReducerTodoActionBuilder>,
         AbstractTodoAction {
   BuiltList<Todo> get todos;
 
   String get statusKey;
 
-  factory SetTodoListTodoAction.create(
+  factory SetTodoListReducerTodoAction.create(
       {required String statusKey, required List<Todo> todos}) {
-    return SetTodoListTodoAction(
+    return SetTodoListReducerTodoAction(
       (builder) => builder
         ..todos.replace(todos)
         ..statusKey = statusKey,
@@ -113,32 +116,33 @@ abstract class SetTodoListTodoAction
   }
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _setDefaults(SetTodoListTodoActionBuilder b) =>
+  static void _setDefaults(SetTodoListReducerTodoActionBuilder b) =>
       b..todos = ListBuilder();
 
-  SetTodoListTodoAction._();
-  factory SetTodoListTodoAction(
-          [void Function(SetTodoListTodoActionBuilder) updates]) =
-      _$SetTodoListTodoAction;
+  SetTodoListReducerTodoAction._();
+  factory SetTodoListReducerTodoAction(
+          [void Function(SetTodoListReducerTodoActionBuilder) updates]) =
+      _$SetTodoListReducerTodoAction;
 }
 
-abstract class AddItemTodoAction
+abstract class AddItemMiddlewareTodoAction
     implements
-        Built<AddItemTodoAction, AddItemTodoActionBuilder>,
+        Built<AddItemMiddlewareTodoAction, AddItemMiddlewareTodoActionBuilder>,
         AbstractTodoAction {
   Todo get todo;
   String get statusKey;
 
   static String createStatusKey() {
-    return 'AddItemTodoAction';
+    return 'AddItemMiddlewareTodoAction';
   }
 
-  factory AddItemTodoAction.create(Todo todo) {
-    return AddItemTodoAction((builder) => builder
+  factory AddItemMiddlewareTodoAction.create(Todo todo) {
+    return AddItemMiddlewareTodoAction((builder) => builder
       ..todo.replace(todo)
       ..statusKey = createStatusKey());
   }
-  AddItemTodoAction._();
-  factory AddItemTodoAction([void Function(AddItemTodoActionBuilder) updates]) =
-      _$AddItemTodoAction;
+  AddItemMiddlewareTodoAction._();
+  factory AddItemMiddlewareTodoAction(
+          [void Function(AddItemMiddlewareTodoActionBuilder) updates]) =
+      _$AddItemMiddlewareTodoAction;
 }

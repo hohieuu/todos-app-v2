@@ -6,37 +6,39 @@ part of 'todo_actions.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$GetTodoListTodoAction extends GetTodoListTodoAction {
+class _$GetTodoListMiddlewareTodoAction
+    extends GetTodoListMiddlewareTodoAction {
   @override
   final String statusKey;
   @override
   final TodoFilter todoFilter;
 
-  factory _$GetTodoListTodoAction(
-          [void Function(GetTodoListTodoActionBuilder)? updates]) =>
-      (new GetTodoListTodoActionBuilder()..update(updates)).build();
+  factory _$GetTodoListMiddlewareTodoAction(
+          [void Function(GetTodoListMiddlewareTodoActionBuilder)? updates]) =>
+      (new GetTodoListMiddlewareTodoActionBuilder()..update(updates)).build();
 
-  _$GetTodoListTodoAction._({required this.statusKey, required this.todoFilter})
+  _$GetTodoListMiddlewareTodoAction._(
+      {required this.statusKey, required this.todoFilter})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'GetTodoListTodoAction', 'statusKey');
+        statusKey, 'GetTodoListMiddlewareTodoAction', 'statusKey');
     BuiltValueNullFieldError.checkNotNull(
-        todoFilter, 'GetTodoListTodoAction', 'todoFilter');
+        todoFilter, 'GetTodoListMiddlewareTodoAction', 'todoFilter');
   }
 
   @override
-  GetTodoListTodoAction rebuild(
-          void Function(GetTodoListTodoActionBuilder) updates) =>
+  GetTodoListMiddlewareTodoAction rebuild(
+          void Function(GetTodoListMiddlewareTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GetTodoListTodoActionBuilder toBuilder() =>
-      new GetTodoListTodoActionBuilder()..replace(this);
+  GetTodoListMiddlewareTodoActionBuilder toBuilder() =>
+      new GetTodoListMiddlewareTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GetTodoListTodoAction &&
+    return other is GetTodoListMiddlewareTodoAction &&
         statusKey == other.statusKey &&
         todoFilter == other.todoFilter;
   }
@@ -48,16 +50,18 @@ class _$GetTodoListTodoAction extends GetTodoListTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetTodoListTodoAction')
+    return (newBuiltValueToStringHelper('GetTodoListMiddlewareTodoAction')
           ..add('statusKey', statusKey)
           ..add('todoFilter', todoFilter))
         .toString();
   }
 }
 
-class GetTodoListTodoActionBuilder
-    implements Builder<GetTodoListTodoAction, GetTodoListTodoActionBuilder> {
-  _$GetTodoListTodoAction? _$v;
+class GetTodoListMiddlewareTodoActionBuilder
+    implements
+        Builder<GetTodoListMiddlewareTodoAction,
+            GetTodoListMiddlewareTodoActionBuilder> {
+  _$GetTodoListMiddlewareTodoAction? _$v;
 
   String? _statusKey;
   String? get statusKey => _$this._statusKey;
@@ -69,11 +73,11 @@ class GetTodoListTodoActionBuilder
   set todoFilter(TodoFilterBuilder? todoFilter) =>
       _$this._todoFilter = todoFilter;
 
-  GetTodoListTodoActionBuilder() {
-    GetTodoListTodoAction._setDefaults(this);
+  GetTodoListMiddlewareTodoActionBuilder() {
+    GetTodoListMiddlewareTodoAction._setDefaults(this);
   }
 
-  GetTodoListTodoActionBuilder get _$this {
+  GetTodoListMiddlewareTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _statusKey = $v.statusKey;
@@ -84,24 +88,24 @@ class GetTodoListTodoActionBuilder
   }
 
   @override
-  void replace(GetTodoListTodoAction other) {
+  void replace(GetTodoListMiddlewareTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GetTodoListTodoAction;
+    _$v = other as _$GetTodoListMiddlewareTodoAction;
   }
 
   @override
-  void update(void Function(GetTodoListTodoActionBuilder)? updates) {
+  void update(void Function(GetTodoListMiddlewareTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GetTodoListTodoAction build() {
-    _$GetTodoListTodoAction _$result;
+  _$GetTodoListMiddlewareTodoAction build() {
+    _$GetTodoListMiddlewareTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$GetTodoListTodoAction._(
+          new _$GetTodoListMiddlewareTodoAction._(
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'GetTodoListTodoAction', 'statusKey'),
+                  statusKey, 'GetTodoListMiddlewareTodoAction', 'statusKey'),
               todoFilter: todoFilter.build());
     } catch (_) {
       late String _$failedField;
@@ -110,7 +114,7 @@ class GetTodoListTodoActionBuilder
         todoFilter.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GetTodoListTodoAction', _$failedField, e.toString());
+            'GetTodoListMiddlewareTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -119,37 +123,38 @@ class GetTodoListTodoActionBuilder
   }
 }
 
-class _$SetFilterTodoAction extends SetFilterTodoAction {
+class _$SetFilterReducerTodoAction extends SetFilterReducerTodoAction {
   @override
   final String statusKey;
   @override
   final TodoFilter todoFilter;
 
-  factory _$SetFilterTodoAction(
-          [void Function(SetFilterTodoActionBuilder)? updates]) =>
-      (new SetFilterTodoActionBuilder()..update(updates)).build();
+  factory _$SetFilterReducerTodoAction(
+          [void Function(SetFilterReducerTodoActionBuilder)? updates]) =>
+      (new SetFilterReducerTodoActionBuilder()..update(updates)).build();
 
-  _$SetFilterTodoAction._({required this.statusKey, required this.todoFilter})
+  _$SetFilterReducerTodoAction._(
+      {required this.statusKey, required this.todoFilter})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'SetFilterTodoAction', 'statusKey');
+        statusKey, 'SetFilterReducerTodoAction', 'statusKey');
     BuiltValueNullFieldError.checkNotNull(
-        todoFilter, 'SetFilterTodoAction', 'todoFilter');
+        todoFilter, 'SetFilterReducerTodoAction', 'todoFilter');
   }
 
   @override
-  SetFilterTodoAction rebuild(
-          void Function(SetFilterTodoActionBuilder) updates) =>
+  SetFilterReducerTodoAction rebuild(
+          void Function(SetFilterReducerTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetFilterTodoActionBuilder toBuilder() =>
-      new SetFilterTodoActionBuilder()..replace(this);
+  SetFilterReducerTodoActionBuilder toBuilder() =>
+      new SetFilterReducerTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is SetFilterTodoAction &&
+    return other is SetFilterReducerTodoAction &&
         statusKey == other.statusKey &&
         todoFilter == other.todoFilter;
   }
@@ -161,16 +166,17 @@ class _$SetFilterTodoAction extends SetFilterTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SetFilterTodoAction')
+    return (newBuiltValueToStringHelper('SetFilterReducerTodoAction')
           ..add('statusKey', statusKey)
           ..add('todoFilter', todoFilter))
         .toString();
   }
 }
 
-class SetFilterTodoActionBuilder
-    implements Builder<SetFilterTodoAction, SetFilterTodoActionBuilder> {
-  _$SetFilterTodoAction? _$v;
+class SetFilterReducerTodoActionBuilder
+    implements
+        Builder<SetFilterReducerTodoAction, SetFilterReducerTodoActionBuilder> {
+  _$SetFilterReducerTodoAction? _$v;
 
   String? _statusKey;
   String? get statusKey => _$this._statusKey;
@@ -182,9 +188,9 @@ class SetFilterTodoActionBuilder
   set todoFilter(TodoFilterBuilder? todoFilter) =>
       _$this._todoFilter = todoFilter;
 
-  SetFilterTodoActionBuilder();
+  SetFilterReducerTodoActionBuilder();
 
-  SetFilterTodoActionBuilder get _$this {
+  SetFilterReducerTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _statusKey = $v.statusKey;
@@ -195,24 +201,24 @@ class SetFilterTodoActionBuilder
   }
 
   @override
-  void replace(SetFilterTodoAction other) {
+  void replace(SetFilterReducerTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$SetFilterTodoAction;
+    _$v = other as _$SetFilterReducerTodoAction;
   }
 
   @override
-  void update(void Function(SetFilterTodoActionBuilder)? updates) {
+  void update(void Function(SetFilterReducerTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SetFilterTodoAction build() {
-    _$SetFilterTodoAction _$result;
+  _$SetFilterReducerTodoAction build() {
+    _$SetFilterReducerTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$SetFilterTodoAction._(
+          new _$SetFilterReducerTodoAction._(
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'SetFilterTodoAction', 'statusKey'),
+                  statusKey, 'SetFilterReducerTodoAction', 'statusKey'),
               todoFilter: todoFilter.build());
     } catch (_) {
       late String _$failedField;
@@ -221,7 +227,7 @@ class SetFilterTodoActionBuilder
         todoFilter.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SetFilterTodoAction', _$failedField, e.toString());
+            'SetFilterReducerTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -230,37 +236,38 @@ class SetFilterTodoActionBuilder
   }
 }
 
-class _$SetStatusTodoAction extends SetStatusTodoAction {
+class _$SetStatusReducerTodoAction extends SetStatusReducerTodoAction {
   @override
   final Status status;
   @override
   final String statusKey;
 
-  factory _$SetStatusTodoAction(
-          [void Function(SetStatusTodoActionBuilder)? updates]) =>
-      (new SetStatusTodoActionBuilder()..update(updates)).build();
+  factory _$SetStatusReducerTodoAction(
+          [void Function(SetStatusReducerTodoActionBuilder)? updates]) =>
+      (new SetStatusReducerTodoActionBuilder()..update(updates)).build();
 
-  _$SetStatusTodoAction._({required this.status, required this.statusKey})
+  _$SetStatusReducerTodoAction._(
+      {required this.status, required this.statusKey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        status, 'SetStatusTodoAction', 'status');
+        status, 'SetStatusReducerTodoAction', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'SetStatusTodoAction', 'statusKey');
+        statusKey, 'SetStatusReducerTodoAction', 'statusKey');
   }
 
   @override
-  SetStatusTodoAction rebuild(
-          void Function(SetStatusTodoActionBuilder) updates) =>
+  SetStatusReducerTodoAction rebuild(
+          void Function(SetStatusReducerTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetStatusTodoActionBuilder toBuilder() =>
-      new SetStatusTodoActionBuilder()..replace(this);
+  SetStatusReducerTodoActionBuilder toBuilder() =>
+      new SetStatusReducerTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is SetStatusTodoAction &&
+    return other is SetStatusReducerTodoAction &&
         status == other.status &&
         statusKey == other.statusKey;
   }
@@ -272,16 +279,17 @@ class _$SetStatusTodoAction extends SetStatusTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SetStatusTodoAction')
+    return (newBuiltValueToStringHelper('SetStatusReducerTodoAction')
           ..add('status', status)
           ..add('statusKey', statusKey))
         .toString();
   }
 }
 
-class SetStatusTodoActionBuilder
-    implements Builder<SetStatusTodoAction, SetStatusTodoActionBuilder> {
-  _$SetStatusTodoAction? _$v;
+class SetStatusReducerTodoActionBuilder
+    implements
+        Builder<SetStatusReducerTodoAction, SetStatusReducerTodoActionBuilder> {
+  _$SetStatusReducerTodoAction? _$v;
 
   StatusBuilder? _status;
   StatusBuilder get status => _$this._status ??= new StatusBuilder();
@@ -291,9 +299,9 @@ class SetStatusTodoActionBuilder
   String? get statusKey => _$this._statusKey;
   set statusKey(String? statusKey) => _$this._statusKey = statusKey;
 
-  SetStatusTodoActionBuilder();
+  SetStatusReducerTodoActionBuilder();
 
-  SetStatusTodoActionBuilder get _$this {
+  SetStatusReducerTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _status = $v.status.toBuilder();
@@ -304,25 +312,25 @@ class SetStatusTodoActionBuilder
   }
 
   @override
-  void replace(SetStatusTodoAction other) {
+  void replace(SetStatusReducerTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$SetStatusTodoAction;
+    _$v = other as _$SetStatusReducerTodoAction;
   }
 
   @override
-  void update(void Function(SetStatusTodoActionBuilder)? updates) {
+  void update(void Function(SetStatusReducerTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SetStatusTodoAction build() {
-    _$SetStatusTodoAction _$result;
+  _$SetStatusReducerTodoAction build() {
+    _$SetStatusReducerTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$SetStatusTodoAction._(
+          new _$SetStatusReducerTodoAction._(
               status: status.build(),
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'SetStatusTodoAction', 'statusKey'));
+                  statusKey, 'SetStatusReducerTodoAction', 'statusKey'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -330,7 +338,7 @@ class SetStatusTodoActionBuilder
         status.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SetStatusTodoAction', _$failedField, e.toString());
+            'SetStatusReducerTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -339,37 +347,39 @@ class SetStatusTodoActionBuilder
   }
 }
 
-class _$CompleteItemTodoAction extends CompleteItemTodoAction {
+class _$CompleteItemMiddlewareTodoAction
+    extends CompleteItemMiddlewareTodoAction {
   @override
   final Todo todo;
   @override
   final String statusKey;
 
-  factory _$CompleteItemTodoAction(
-          [void Function(CompleteItemTodoActionBuilder)? updates]) =>
-      (new CompleteItemTodoActionBuilder()..update(updates)).build();
+  factory _$CompleteItemMiddlewareTodoAction(
+          [void Function(CompleteItemMiddlewareTodoActionBuilder)? updates]) =>
+      (new CompleteItemMiddlewareTodoActionBuilder()..update(updates)).build();
 
-  _$CompleteItemTodoAction._({required this.todo, required this.statusKey})
+  _$CompleteItemMiddlewareTodoAction._(
+      {required this.todo, required this.statusKey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        todo, 'CompleteItemTodoAction', 'todo');
+        todo, 'CompleteItemMiddlewareTodoAction', 'todo');
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'CompleteItemTodoAction', 'statusKey');
+        statusKey, 'CompleteItemMiddlewareTodoAction', 'statusKey');
   }
 
   @override
-  CompleteItemTodoAction rebuild(
-          void Function(CompleteItemTodoActionBuilder) updates) =>
+  CompleteItemMiddlewareTodoAction rebuild(
+          void Function(CompleteItemMiddlewareTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CompleteItemTodoActionBuilder toBuilder() =>
-      new CompleteItemTodoActionBuilder()..replace(this);
+  CompleteItemMiddlewareTodoActionBuilder toBuilder() =>
+      new CompleteItemMiddlewareTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CompleteItemTodoAction &&
+    return other is CompleteItemMiddlewareTodoAction &&
         todo == other.todo &&
         statusKey == other.statusKey;
   }
@@ -381,16 +391,18 @@ class _$CompleteItemTodoAction extends CompleteItemTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CompleteItemTodoAction')
+    return (newBuiltValueToStringHelper('CompleteItemMiddlewareTodoAction')
           ..add('todo', todo)
           ..add('statusKey', statusKey))
         .toString();
   }
 }
 
-class CompleteItemTodoActionBuilder
-    implements Builder<CompleteItemTodoAction, CompleteItemTodoActionBuilder> {
-  _$CompleteItemTodoAction? _$v;
+class CompleteItemMiddlewareTodoActionBuilder
+    implements
+        Builder<CompleteItemMiddlewareTodoAction,
+            CompleteItemMiddlewareTodoActionBuilder> {
+  _$CompleteItemMiddlewareTodoAction? _$v;
 
   TodoBuilder? _todo;
   TodoBuilder get todo => _$this._todo ??= new TodoBuilder();
@@ -400,9 +412,9 @@ class CompleteItemTodoActionBuilder
   String? get statusKey => _$this._statusKey;
   set statusKey(String? statusKey) => _$this._statusKey = statusKey;
 
-  CompleteItemTodoActionBuilder();
+  CompleteItemMiddlewareTodoActionBuilder();
 
-  CompleteItemTodoActionBuilder get _$this {
+  CompleteItemMiddlewareTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _todo = $v.todo.toBuilder();
@@ -413,25 +425,25 @@ class CompleteItemTodoActionBuilder
   }
 
   @override
-  void replace(CompleteItemTodoAction other) {
+  void replace(CompleteItemMiddlewareTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CompleteItemTodoAction;
+    _$v = other as _$CompleteItemMiddlewareTodoAction;
   }
 
   @override
-  void update(void Function(CompleteItemTodoActionBuilder)? updates) {
+  void update(void Function(CompleteItemMiddlewareTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CompleteItemTodoAction build() {
-    _$CompleteItemTodoAction _$result;
+  _$CompleteItemMiddlewareTodoAction build() {
+    _$CompleteItemMiddlewareTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$CompleteItemTodoAction._(
+          new _$CompleteItemMiddlewareTodoAction._(
               todo: todo.build(),
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'CompleteItemTodoAction', 'statusKey'));
+                  statusKey, 'CompleteItemMiddlewareTodoAction', 'statusKey'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -439,7 +451,7 @@ class CompleteItemTodoActionBuilder
         todo.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CompleteItemTodoAction', _$failedField, e.toString());
+            'CompleteItemMiddlewareTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -448,37 +460,38 @@ class CompleteItemTodoActionBuilder
   }
 }
 
-class _$SetTodoListTodoAction extends SetTodoListTodoAction {
+class _$SetTodoListReducerTodoAction extends SetTodoListReducerTodoAction {
   @override
   final BuiltList<Todo> todos;
   @override
   final String statusKey;
 
-  factory _$SetTodoListTodoAction(
-          [void Function(SetTodoListTodoActionBuilder)? updates]) =>
-      (new SetTodoListTodoActionBuilder()..update(updates)).build();
+  factory _$SetTodoListReducerTodoAction(
+          [void Function(SetTodoListReducerTodoActionBuilder)? updates]) =>
+      (new SetTodoListReducerTodoActionBuilder()..update(updates)).build();
 
-  _$SetTodoListTodoAction._({required this.todos, required this.statusKey})
+  _$SetTodoListReducerTodoAction._(
+      {required this.todos, required this.statusKey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        todos, 'SetTodoListTodoAction', 'todos');
+        todos, 'SetTodoListReducerTodoAction', 'todos');
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'SetTodoListTodoAction', 'statusKey');
+        statusKey, 'SetTodoListReducerTodoAction', 'statusKey');
   }
 
   @override
-  SetTodoListTodoAction rebuild(
-          void Function(SetTodoListTodoActionBuilder) updates) =>
+  SetTodoListReducerTodoAction rebuild(
+          void Function(SetTodoListReducerTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetTodoListTodoActionBuilder toBuilder() =>
-      new SetTodoListTodoActionBuilder()..replace(this);
+  SetTodoListReducerTodoActionBuilder toBuilder() =>
+      new SetTodoListReducerTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is SetTodoListTodoAction &&
+    return other is SetTodoListReducerTodoAction &&
         todos == other.todos &&
         statusKey == other.statusKey;
   }
@@ -490,16 +503,18 @@ class _$SetTodoListTodoAction extends SetTodoListTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SetTodoListTodoAction')
+    return (newBuiltValueToStringHelper('SetTodoListReducerTodoAction')
           ..add('todos', todos)
           ..add('statusKey', statusKey))
         .toString();
   }
 }
 
-class SetTodoListTodoActionBuilder
-    implements Builder<SetTodoListTodoAction, SetTodoListTodoActionBuilder> {
-  _$SetTodoListTodoAction? _$v;
+class SetTodoListReducerTodoActionBuilder
+    implements
+        Builder<SetTodoListReducerTodoAction,
+            SetTodoListReducerTodoActionBuilder> {
+  _$SetTodoListReducerTodoAction? _$v;
 
   ListBuilder<Todo>? _todos;
   ListBuilder<Todo> get todos => _$this._todos ??= new ListBuilder<Todo>();
@@ -509,11 +524,11 @@ class SetTodoListTodoActionBuilder
   String? get statusKey => _$this._statusKey;
   set statusKey(String? statusKey) => _$this._statusKey = statusKey;
 
-  SetTodoListTodoActionBuilder() {
-    SetTodoListTodoAction._setDefaults(this);
+  SetTodoListReducerTodoActionBuilder() {
+    SetTodoListReducerTodoAction._setDefaults(this);
   }
 
-  SetTodoListTodoActionBuilder get _$this {
+  SetTodoListReducerTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _todos = $v.todos.toBuilder();
@@ -524,25 +539,25 @@ class SetTodoListTodoActionBuilder
   }
 
   @override
-  void replace(SetTodoListTodoAction other) {
+  void replace(SetTodoListReducerTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$SetTodoListTodoAction;
+    _$v = other as _$SetTodoListReducerTodoAction;
   }
 
   @override
-  void update(void Function(SetTodoListTodoActionBuilder)? updates) {
+  void update(void Function(SetTodoListReducerTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SetTodoListTodoAction build() {
-    _$SetTodoListTodoAction _$result;
+  _$SetTodoListReducerTodoAction build() {
+    _$SetTodoListReducerTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$SetTodoListTodoAction._(
+          new _$SetTodoListReducerTodoAction._(
               todos: todos.build(),
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'SetTodoListTodoAction', 'statusKey'));
+                  statusKey, 'SetTodoListReducerTodoAction', 'statusKey'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -550,7 +565,7 @@ class SetTodoListTodoActionBuilder
         todos.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SetTodoListTodoAction', _$failedField, e.toString());
+            'SetTodoListReducerTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -559,35 +574,37 @@ class SetTodoListTodoActionBuilder
   }
 }
 
-class _$AddItemTodoAction extends AddItemTodoAction {
+class _$AddItemMiddlewareTodoAction extends AddItemMiddlewareTodoAction {
   @override
   final Todo todo;
   @override
   final String statusKey;
 
-  factory _$AddItemTodoAction(
-          [void Function(AddItemTodoActionBuilder)? updates]) =>
-      (new AddItemTodoActionBuilder()..update(updates)).build();
+  factory _$AddItemMiddlewareTodoAction(
+          [void Function(AddItemMiddlewareTodoActionBuilder)? updates]) =>
+      (new AddItemMiddlewareTodoActionBuilder()..update(updates)).build();
 
-  _$AddItemTodoAction._({required this.todo, required this.statusKey})
+  _$AddItemMiddlewareTodoAction._({required this.todo, required this.statusKey})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(todo, 'AddItemTodoAction', 'todo');
     BuiltValueNullFieldError.checkNotNull(
-        statusKey, 'AddItemTodoAction', 'statusKey');
+        todo, 'AddItemMiddlewareTodoAction', 'todo');
+    BuiltValueNullFieldError.checkNotNull(
+        statusKey, 'AddItemMiddlewareTodoAction', 'statusKey');
   }
 
   @override
-  AddItemTodoAction rebuild(void Function(AddItemTodoActionBuilder) updates) =>
+  AddItemMiddlewareTodoAction rebuild(
+          void Function(AddItemMiddlewareTodoActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AddItemTodoActionBuilder toBuilder() =>
-      new AddItemTodoActionBuilder()..replace(this);
+  AddItemMiddlewareTodoActionBuilder toBuilder() =>
+      new AddItemMiddlewareTodoActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AddItemTodoAction &&
+    return other is AddItemMiddlewareTodoAction &&
         todo == other.todo &&
         statusKey == other.statusKey;
   }
@@ -599,16 +616,18 @@ class _$AddItemTodoAction extends AddItemTodoAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AddItemTodoAction')
+    return (newBuiltValueToStringHelper('AddItemMiddlewareTodoAction')
           ..add('todo', todo)
           ..add('statusKey', statusKey))
         .toString();
   }
 }
 
-class AddItemTodoActionBuilder
-    implements Builder<AddItemTodoAction, AddItemTodoActionBuilder> {
-  _$AddItemTodoAction? _$v;
+class AddItemMiddlewareTodoActionBuilder
+    implements
+        Builder<AddItemMiddlewareTodoAction,
+            AddItemMiddlewareTodoActionBuilder> {
+  _$AddItemMiddlewareTodoAction? _$v;
 
   TodoBuilder? _todo;
   TodoBuilder get todo => _$this._todo ??= new TodoBuilder();
@@ -618,9 +637,9 @@ class AddItemTodoActionBuilder
   String? get statusKey => _$this._statusKey;
   set statusKey(String? statusKey) => _$this._statusKey = statusKey;
 
-  AddItemTodoActionBuilder();
+  AddItemMiddlewareTodoActionBuilder();
 
-  AddItemTodoActionBuilder get _$this {
+  AddItemMiddlewareTodoActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _todo = $v.todo.toBuilder();
@@ -631,25 +650,25 @@ class AddItemTodoActionBuilder
   }
 
   @override
-  void replace(AddItemTodoAction other) {
+  void replace(AddItemMiddlewareTodoAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$AddItemTodoAction;
+    _$v = other as _$AddItemMiddlewareTodoAction;
   }
 
   @override
-  void update(void Function(AddItemTodoActionBuilder)? updates) {
+  void update(void Function(AddItemMiddlewareTodoActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AddItemTodoAction build() {
-    _$AddItemTodoAction _$result;
+  _$AddItemMiddlewareTodoAction build() {
+    _$AddItemMiddlewareTodoAction _$result;
     try {
       _$result = _$v ??
-          new _$AddItemTodoAction._(
+          new _$AddItemMiddlewareTodoAction._(
               todo: todo.build(),
               statusKey: BuiltValueNullFieldError.checkNotNull(
-                  statusKey, 'AddItemTodoAction', 'statusKey'));
+                  statusKey, 'AddItemMiddlewareTodoAction', 'statusKey'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -657,7 +676,7 @@ class AddItemTodoActionBuilder
         todo.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'AddItemTodoAction', _$failedField, e.toString());
+            'AddItemMiddlewareTodoAction', _$failedField, e.toString());
       }
       rethrow;
     }
