@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:todos_app/screens/home/widgets/todo_item.dart';
 import 'package:todos_app/utils/keys.dart';
@@ -11,6 +12,7 @@ import 'package:todos_app/main.dart' as mainApp;
 import 'test_helpers.dart';
 
 void main() {
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group('Add todo flow test', () {
     testWidgets(
       'Add todo - Success',

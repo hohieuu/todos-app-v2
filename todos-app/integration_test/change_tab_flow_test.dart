@@ -14,7 +14,7 @@ import 'app/main.mocks.dart';
 import 'test_helpers.dart';
 
 void main() {
-  // IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group('Change tab flow test', () {
     testWidgets(
       'Change tab with empty data',
@@ -75,8 +75,6 @@ void main() {
     testWidgets(
       'Change tab with error data',
       (WidgetTester widgetTester) async {
-        IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
         final todosRepository = MockTodosRepository();
         //Mock data
         when(todosRepository
